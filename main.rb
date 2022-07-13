@@ -23,7 +23,7 @@ def decode_morse_code_message(incoded_message)
   message_array = incoded_message.split('   ')
   message = ''
   message_array.each { |word| message << " #{decode_morse_code_word(word)}" }
-  message
+  message.strip
 end
 
 p decode_morse_code_character('.-')
