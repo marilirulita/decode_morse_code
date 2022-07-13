@@ -15,18 +15,17 @@ end
 def decode_morse_code_word(incoded_word)
   word_array = incoded_word.split
   word = ''
-  word_array.each {|c| word << decode_morse_code_character(c)}
+  word_array.each { |c| word << decode_morse_code_character(c) }
   word
 end
 
 def decode_morse_code_message(incoded_message)
   message_array = incoded_message.split('   ')
   message = ''
-  message_array.each {|word| message << " #{decode_morse_code_word(word)}"}
+  message_array.each { |word| message << " #{decode_morse_code_word(word)}" }
   message
 end
 
 p decode_morse_code_character('.-')
 p decode_morse_code_word('-- -.--   -. .- -- .')
 p decode_morse_code_message('.-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-.   .-. ..- -... .. . ...')
-
